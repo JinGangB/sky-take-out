@@ -11,4 +11,19 @@
         </where>
         order by create_time desc
     </select>
+    <update id="update" parameterType="com.sky.entity.Employee">
+        update employee
+        <set>
+            <if test="status != null">status = #{status}</if>
+            <if test="name != null">status = #{name}</if>
+            <if test="username != null">status = #{username}</if>
+            <if test="password != null">status = #{password}</if>
+            <if test="phone != null">status = #{phone}</if>
+            <if test="sex != null">status = #{sex}</if>
+            <if test="idNumber != null">status = #{idNumber}</if>
+            <if test="updateTime != null">status = #{updateTime}</if>
+            <if test="updateUser != null">status = #{updateUser}</if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper>
